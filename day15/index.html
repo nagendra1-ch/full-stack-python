@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="./styles/index_css.css">
+
+    <style>
+        input:active{
+            border: none;
+            border-bottom: 2px solid blue;
+        }
+        .para{
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="main-container">
+    <div id="todo-container">
+        <!-- rebder list
+        <p>Todo 1</p>
+        <p>Todo 2</p>
+        <p>Todo 3</p> -->
+    </div>
+    <div id="input-container" style="border:1px solid red">
+        <input style="margin:5px" type="text" id="inp" placeholder="Enter the Todo to add">
+        <button style="margin:5px">Add Todo</button>
+    </div>
+    </div>
+</body>
+<script >
+    const todo=JSON.parse(localStorage.getItem("arr"))
+    if(!todo)
+    todo=[]
+    console.log(todo)
+
+
+    const fun=()=>{
+        const var_name=document.getElementById("todo-container")
+        var_name.innerHTML=''
+        todo.forEach(function(name){
+            let newtag=document.createElement("p")
+            
+            newtag.textContent=name
+            const parent = document.querySelector("#todo-container")
+            parent.appendChild(newtag)
+            const cls_name=document.querySelector("p")
+            cls_name.classList.add("para")
+            })
+        }
+            
+
+
+    fun()
+    //to get input from user
+    
+    const button=document.querySelector("button")
+    button.addEventListener("click",()=>{
+        const input=document.getElementById("inp")
+        let name=input.value;
+        
+        
+        todo.push(name)
+        
+        localStorage.setItem("arr",JSON.stringify(todo))
+        input.innerHTML=''
+        fun()
+        console.log(todo)
+
+    })
+        
+
+
+</script>
+</html>

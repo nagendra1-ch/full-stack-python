@@ -1,0 +1,29 @@
+#todo-container{
+    border: 1px solid red;
+    width:30%;
+    padding:5px;
+    margin:5px;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+    box-shadow: rgb(216, 123, 0) 0px 5px 25px;
+}
+#main-container{
+    display:flex;
+    justify-content:space-evenly ;
+    margin-top: 100px;
+}
+#input-container{
+    display: flex;
+    flex-direction: column;
+    margin:5px;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+    box-shadow: rgb(216, 123, 0) 0px 5px 25px;
+}
+body{
+    background-color: aqua;
+}
